@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private float hSpeed;
-    private float baseSpeed = 4f;
-    private float resistance = 0.05f;
+    private float baseSpeed = 0.1f;
+    private float resistance = 0.005f;
+    public GameObject player;
+    public Camera cam;
     void Start()
     {
         hSpeed = 0f;
@@ -15,39 +17,49 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
+        if (Input.touchCount >0)
+        {
+            player.transform.position += new Vector3(0, 0, -0.1f);
+        }
+        else
+            player.transform.position += new Vector3(0, 0, 0.1f);
+        */
+        
         if (Input.touchCount >0)
         {
             Touch tap = Input.GetTouch(0);
-            Vector3 tpos = Camera.main.ScreenToWorldPoint(tap.position);
-            if (tpos.x > transform.position.x)
-            {
-                hSpeed = baseSpeed;
-            }
-            else if (tpos.x < transform.position.x)
+            Vector3 tpos = cam.ScreenToViewportPoint(tap.position);
+            if (tpos.x > 0.5)
             {
                 hSpeed = -baseSpeed;
             }
+            else if (tpos.x < 0.5)
+            {
+                hSpeed = baseSpeed;
+            }
         }
+        /*
         else
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 tpos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (tpos.x > transform.position.x)
+            if (tpos.x > player.transform.position.x)
             {
                 hSpeed = baseSpeed;
             }
-            else if (tpos.x < transform.position.x)
+            else if (tpos.x < player.transform.position.x)
             {
                 hSpeed = -baseSpeed;
             }
-            Debug.DrawLine(Vector3.zero, tpos, Color.red);
         }
+        */
     }
 
     void FixedUpdate()
     {
         Vector3 hmov = new Vector3(hSpeed, 0, 0);
-        transform.position += hmov;
+        player.transform.position += hmov;
         if(hSpeed > 0)
             hSpeed -= resistance;
         else if (hSpeed < 0)
