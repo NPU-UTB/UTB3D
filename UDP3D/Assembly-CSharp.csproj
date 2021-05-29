@@ -36,10 +36,21 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\DieEnemy.cs" />
      <Compile Include="Assets\Scripts\RoadLoop.cs" />
+     <Compile Include="Assets\Scripts\ObstacleMovement.cs" />
+     <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Menu\Menu.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\ObstacleMovement.cs" />
+     <Compile Include="Assets\Scripts\DoodadSpawner.cs" />
+     <Compile Include="Assets\Scripts\EnemyChasing.cs" />
+     <Compile Include="Assets\Scripts\EnemyIncoming.cs" />
+     <Compile Include="Assets\Scripts\ChaserSpawner.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\EndOfRoad.cs" />
+     <Compile Include="Assets\Scripts\DieChaser.cs" />
+     <Compile Include="Assets\Scripts\PushBack.cs" />
+     <Compile Include="Assets\Scripts\PlayerState.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstacle
+  - Road
+  - Enemy
+  - Goo
+  - Chaser
+  - Doodad
+  - Building
+  - Tall
   layers:
   - Default
   - TransparentFX
@@ -41,6 +48,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3945540953
     locked: 0
   - name: Ground
     uniqueID: 3379151085

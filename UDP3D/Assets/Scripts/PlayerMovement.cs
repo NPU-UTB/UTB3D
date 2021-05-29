@@ -16,16 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        /*
-        if (Input.touchCount >0)
-        {
-            player.transform.position += new Vector3(0, 0, -0.1f);
-        }
-        else
-            player.transform.position += new Vector3(0, 0, 0.1f);
-        */
-        
+    {       
         if (Input.touchCount >0)
         {
             Touch tap = Input.GetTouch(0);
@@ -39,21 +30,6 @@ public class PlayerMovement : MonoBehaviour
                 hSpeed = baseSpeed;
             }
         }
-        /*
-        else
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 tpos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (tpos.x > player.transform.position.x)
-            {
-                hSpeed = baseSpeed;
-            }
-            else if (tpos.x < player.transform.position.x)
-            {
-                hSpeed = -baseSpeed;
-            }
-        }
-        */
     }
 
     void FixedUpdate()

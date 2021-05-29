@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ObstacleMovement : MonoBehaviour
 {
-    public float speed = 0.5f;
-    public GameObject obst;
+    private float speed = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +14,10 @@ public class ObstacleMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(obst.transform.position.z < 13)
+        if(transform.position.z < 13)
         {
             Vector3 mov = new Vector3(0, 0, speed*Time.deltaTime);
-            obst.transform.position += mov;
+            transform.position += mov;
         }
     }
 }
